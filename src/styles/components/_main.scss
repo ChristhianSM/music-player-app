@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  background: #ffffff;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.container-nav-menu {
+  padding-top: 50px;
+  width: 330px;
+  display: block;
+  background-color: map-get($map: $colors, $key: dark-red);
+  min-height: 100vh;
+}
+
+.container-results {
+  padding: 30px 40px;
+  width: calc(100% - 330px);
+}

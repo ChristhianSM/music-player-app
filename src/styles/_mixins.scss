@@ -1,0 +1,19 @@
+// Breakpoints
+@mixin breakpoint($point) {
+  $tablet: 577px;
+  $desktop: 992px;
+
+   /* At least 577px */
+  @if $point == tablet {
+    @media only screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+
+  /* At least 992px */
+  @if $point == desktop {
+    @media only screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+}

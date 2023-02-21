@@ -1,0 +1,56 @@
+.container-search-user {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.search {
+  max-width: 524px;
+  position: relative;
+  width: 75%;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid map-get($map: $colors, $key: gray);
+  border-radius: 100px;
+  padding: 6px 16px;
+  height: 36px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  color: map-get($map: $colors, $key: soft-gray);
+}
+
+.search-input:focus {
+  transition: all 300ms ease-in-out;
+  border: 1px solid map-get($map: $colors, $key: light-red);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 1.2rem;
+  color: #bdbdbd;
+  cursor: pointer;
+  padding: 0.1rem;
+}
+
+.container-user {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.username {
+  color: map-get($map: $colors, $key: gray-text-2);
+  font-size: 16px;
+  font-weight: 400;
+}

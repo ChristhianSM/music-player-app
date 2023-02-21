@@ -1,0 +1,39 @@
+.logo {
+  margin-bottom: 30px;
+  padding-left: 40px;
+}
+
+.menu-librery, .menu-playlist {
+  display: flex;
+  flex-direction: column;
+  color: map-get($map: $colors, $key: white);
+  margin-bottom: 30px;
+}
+
+.menu-librery-title, .menu-playlist-title {
+  padding-left: 40px;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.menu-item {
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  transition: all 0.3s ease-in;
+  padding-left: 40px;
+  border-left: 5px solid transparent;
+}
+
+.menu-item:hover {
+  color: map-get($map: $colors, $key: principal-red);
+  font-weight: 700;
+  border-left: 5px solid map-get($map: $colors, $key: principal-red);
+}
+
+.menu-item.active {
+  border-left: 5px solid map-get($map: $colors, $key: principal-red);
+}
