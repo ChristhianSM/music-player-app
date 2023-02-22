@@ -1,11 +1,11 @@
-const BASE_URL = "https://deezerdevs-deezer.p.rapidapi.com/artist";
+const BASE_URL = "https://deezerdevs-deezer.p.rapidapi.com";
 
 export const getArtistaService = async (idArtista) => {
-  const url = `${BASE_URL}/${encodeURI(idArtista)}`;
+  const url = `${BASE_URL}/artist/${idArtista}`;
   let resp = await fetch(url, {
     method: 'GET',
     headers: {
-      'x-rapidapi-key': '5cb7706abcmsh52ed7934a99a06ep15d9a2jsnffa41311ac30',
+      'x-rapidapi-key': '8414519b7bmsh22a20f5c2b35f4dp19cfa0jsnb82c774d0a9f',
       'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com'
     }
   })
