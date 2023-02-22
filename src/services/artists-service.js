@@ -10,7 +10,6 @@ export const getArtistaService = async (idArtista) => {
     }
   })
   const data = await resp.json();
-  console.log(data)
   return {
     id: data.id,
     link_bi: data.link,

@@ -1,6 +1,7 @@
 .container-song-play {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 100px;
   position: fixed;
@@ -8,6 +9,13 @@
   bottom: 0;
   max-width: 1300px;
   background: map-get($map: $colors, $key: red-80);
+}
+
+.container-song-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 350px;
 }
 
 .song-play-img {
@@ -21,7 +29,6 @@
 
 .song-play-header {
   color: map-get($map: $colors, $key: white);
-  margin-left: 20px;
 
   .title {
     font-weight: 700;
@@ -40,5 +47,61 @@
 }
 
 .container-buttons-play {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-btn-play {
+  cursor: pointer;
+  padding: 21px 18px 18px 24px;
+  border-radius: 50%;
+
+  &.play {
+    padding: 21px;
+  }
+
+  &:hover {
+    background-color: map-get($map: $colors, $key: light-red);
+  }
+}
+
+.container-btn-left {
+  cursor: pointer;
+  padding: 15px 12px 12px 10px;
+  border-radius: 50%;
   
+  &:hover {
+    transition: all 500ms ease-in-out;
+    background-color: map-get($map: $colors, $key: light-red);
+  }
+}
+
+.container-btn-right {
+  cursor: pointer;
+  padding: 15px 12px 12px 10px;
+  border-radius: 50%;
+  
+  &:hover {
+    transition: all 500ms ease-in-out;
+    background-color: map-get($map: $colors, $key: light-red);
+  }
+}
+
+.container-song-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-right: 40px;
+}
+
+.volumen {
+  cursor: pointer;
+}
+
+.mute, .no-mute {
+  color: white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
