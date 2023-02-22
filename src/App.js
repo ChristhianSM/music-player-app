@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavMenu } from "./components/NavMenu";
+import { PlayerMusic } from "./components/PlayerMusic";
 import { SearchSong } from "./components/SearchSong";
 import { Songs } from "./components/Songs";
 import { SpecialArtist } from "./components/SpecialArtist";
@@ -33,7 +34,10 @@ function App() {
           />
         </div>
       </div>
-      
+      <PlayerMusic
+        valueSearch={valueSearch}
+        songToPlay={SongToPlay}
+      />
     </div>
   );
 }
