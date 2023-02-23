@@ -41,7 +41,7 @@ Se planteo contruir un reproductor de musica online, para ello se desarrollo un 
    ```
 2. Ingrese a la carpeta del proyecto, ejecute el comando npm i para descargar las dependencias y luego ejecute el comando npm run start y listo.
    ```js
-   const BASE_URI = 'https://api-bsaletest.herokuapp.com/';
+   const BASE_URI = 'https://music-player-app-phi.vercel.app/';
    ```
 
 ### LICENCIA
