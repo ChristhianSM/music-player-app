@@ -25,9 +25,11 @@ Se planteo contruir un reproductor de musica online, para ello se desarrollo un 
 ## Demo: 
 
 <div align="center" style="margin-bottom:30px">
-  <img src="https://github.com/ChristhianSM/bsale-frontend/blob/main/src/assets/imagen1.PNG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/bsale-frontend/blob/main/src/assets/imagen2.PNG" width="400" title="hover text">
-  <img src="https://github.com/ChristhianSM/bsale-frontend/blob/main/src/assets/imagen3.PNG" width="400" title="hover text">
+  <img src="https://raw.githubusercontent.com/ChristhianSM/music-player-app/main/src/assets/imagen1.JPG" width="400" title="hover text">
+  <img src="https://raw.githubusercontent.com/ChristhianSM/music-player-app/main/src/assets/imagen2.JPG" width="400" title="hover text">
+  <img src="https://raw.githubusercontent.com/ChristhianSM/music-player-app/main/src/assets/imagen3.JPG" width="400" title="hover text">
+  <img src="https://raw.githubusercontent.com/ChristhianSM/music-player-app/main/src/assets/imagen4.JPG" width="400" title="hover text">
+  <img src="https://raw.githubusercontent.com/ChristhianSM/music-player-app/main/src/assets/imagen5.JPG" width="400" title="hover text">
 </div>
 `
 
