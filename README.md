@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# FoxbelMusic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Reproductor de musica, donde podras escuchar tus canciones favoritas, FoxbelMusic es una aplicación de música en streaming que te da acceso a más de 90 millones de canciones en todo el mundo y otros contenidos de audio como podcasts.
 
-## Available Scripts
+## Explicacion del proyecto 
+Se planteo contruir un reproductor de musica online, para ello se desarrollo un front que consume recursos mediante fetch, este proyecto tiene la funcionalidad de mostrar al usuario todos las canciones traidas de la base de datos de Deezer, tambien se podra agregar canciones recientes, visualizar los artistas. El usuario podra buscar por canciones, albumes y artistas por medio de un termino de busqueda, Tambien se puede reproducir canciones, subir y bajar volumen y pasar a la siguiente cancion.
 
-In the project directory, you can run:
+## Que puedo hacer en FoxbelMusic :
 
-### `npm start`
+* Visualizar todos las canciones de un determinado artista.
+* Agregar canciones recientes.
+* Visualizar los artistas de los cuales se visito alguna de sus canciones.
+* Busqueda de canciones por Palabra.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Construido con
+* HTML
+* SASS
+* REACT
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Temas comprendidos
 
-### `npm test`
+* React-router-dom
+* Consumo de apis (fetch)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo: 
 
-### `npm run build`
+<div align="center" style="margin-bottom:30px">
+  <img src="https://github.com/ChristhianSM/bsale-frontend/blob/main/src/assets/imagen1.PNG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/bsale-frontend/blob/main/src/assets/imagen2.PNG" width="400" title="hover text">
+  <img src="https://github.com/ChristhianSM/bsale-frontend/blob/main/src/assets/imagen3.PNG" width="400" title="hover text">
+</div>
+`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instalacion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone el repositorio 
+   ```sh
+   git clone https://github.com/ChristhianSM/music-player-app.git
+   ```
+2. Ingrese a la carpeta del proyecto, ejecute el comando npm i para descargar las dependencias y luego ejecute el comando npm run start y listo.
+   ```js
+   const BASE_URI = 'https://api-bsaletest.herokuapp.com/';
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### LICENCIA
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Licencia MIT Copyright (c) 2023, Christhian Silupú Moscol.
