@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavMenu } from "./components/NavMenu";
 import { PlayerMusic } from "./components/PlayerMusic";
 import { SearchSong } from "./components/SearchSong";
 import { Songs } from "./components/Songs";
 import { SpecialArtist } from "./components/SpecialArtist";
 import { User } from "./components/User";
+import { MatchProvider } from "./context/SongProvider";
 
 function App() {
-
-  const initial = 'my universe'
-  const [valueSearch, setValueSearch] = useState(initial);
-  const [idArtist, setIdArtist] = useState(1);
-  const [SongToPlay, setSongToPlay] = useState({});
+  const [valueSearch, setValueSearch] = useState("Romeo Santos");
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -23,35 +20,30 @@ function App() {
   }, []);
 
   return (
-    <div className="main">
-      {screenWidth >= 800 
-        && <div className="container-nav-menu">
-            <NavMenu />
+    <MatchProvider>
+      <div className="main">
+        {screenWidth >= 800 
+          && <div className="container-nav-menu">
+              <NavMenu />
+            </div>
+        }
+        <div className="container-results">
+          <div className="container-search-user">
+            <SearchSong
+              setValueSearch={setValueSearch}
+            />
+            <User />
           </div>
-      }
-      <div className="container-results">
-        <div className="container-search-user">
-          <SearchSong
-            setValueSearch={setValueSearch}
-          />
-          <User />
+          <SpecialArtist />
+          <div className="container-songs">
+            <Songs 
+              valueSearch={valueSearch}
+            />
+          </div>
         </div>
-        <SpecialArtist
-          idArtist={idArtist}
-        />
-        <div className="container-songs">
-          <Songs 
-            valueSearch={valueSearch}
-            setIdArtist={setIdArtist}
-            setSongToPlay={setSongToPlay}
-          />
-        </div>
+        <PlayerMusic />
       </div>
-      <PlayerMusic
-        valueSearch={valueSearch}
-        songToPlay={SongToPlay}
-      />
-    </div>
+    </MatchProvider>
   );
 }
 

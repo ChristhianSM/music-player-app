@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import IconPlay from '../assets/icon-play.svg';
 import IconBtnThreeVertical from '../assets/icon-btn-three-vertical.svg';
+import { SongContext } from '../context/SongContext';
 
-export const Song = ({ song, setSongToPlay, setIdArtist }) => {
+export const Song = ({ song }) => {
+
   const { id, title, img, id_artista, artist } = song;
+  const { setSongSelected, setIdArtist } = useContext(SongContext);
 
   const delemitText = (text = "") => {
     if (text.length > 20) {
@@ -20,7 +23,7 @@ export const Song = ({ song, setSongToPlay, setIdArtist }) => {
           type="button"
           className="card-song-play"
           onClick={() => {
-            setSongToPlay(song);
+            setSongSelected(song);
             setIdArtist(id_artista);
           }}
         >

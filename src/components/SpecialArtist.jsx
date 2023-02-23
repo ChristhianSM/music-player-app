@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import IconBtnThree from '../assets/icon-btn-three.svg';
+import { SongContext } from '../context/SongContext';
 import { getArtistaService } from '../services/artists-service'
 import { Loader } from './Loader';
 
-export const SpecialArtist = ({ idArtist = 1 }) => {
+export const SpecialArtist = () => {
+  
+  const { idArtist } = useContext(SongContext);
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const { link_bi, name, fans, img_medium, img_xl } = data

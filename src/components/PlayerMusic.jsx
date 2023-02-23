@@ -1,23 +1,46 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import IconBtnRight from '../assets/icon-btn-right.svg';
 import IconBtnLeft from '../assets/icon-btn-left.svg';
 import IconPlay from '../assets/icon-play.svg';
 import IconVolumen from '../assets/icon-volumen.svg';
 import IconMute from '../assets/icon-mute.svg';
 import IconPause from '../assets/icon-pause.svg';
+import { SongContext } from '../context/SongContext';
 
-export const PlayerMusic = ({ songToPlay }) => {
-  const { img, title, artist, album, mp3 } = songToPlay;
+export const PlayerMusic = () => {
+  const { songs, songSelected, setSongSelected, setIdArtist } = useContext(SongContext);
+  const { img, title, artist, album, mp3 } = songSelected;
   const [isPlaying, setIsPlaying] = useState(true);
+  const [indexSong, setIndexSong] = useState(0);
   const [isMute, setIsMute] = useState(false);
   const audioRef = useRef();
   const volumeRef = useRef();
 
   useEffect(() => {
     setIsPlaying(true);
-  }, [mp3])
+    setIndexSong(songs.indexOf(songSelected));
+  }, [songSelected, songs])
 
-  if (Object.keys(songToPlay).length === 0) return null;
+  if (Object.keys(songSelected).length === 0) return null;
+
+  const handlePrev = () => {
+    if (indexSong <= 0) {
+      const audio = audioRef.current;
+      audio.src = songs[indexSong].mp3
+    }else {
+      setIdArtist(songs[indexSong - 1].id_artista);
+      setSongSelected(songs[indexSong - 1]);
+      setIndexSong(indexSong - 1);
+    }
+  }
+
+  const handleNext = () => {
+    if (indexSong !== songs.length - 1) {
+      setIdArtist(songs[indexSong + 1].id_artista);
+      setSongSelected(songs[indexSong + 1]);
+      setIndexSong(indexSong + 1);
+    }
+  }
 
   const handlePlay = () => {
     const audio = audioRef.current;
@@ -68,6 +91,7 @@ export const PlayerMusic = ({ songToPlay }) => {
                 src={IconBtnLeft}
                 alt=""
                 className='btn-left'
+                onClick={handlePrev}
               />
             </div>
             <div className={`container-btn-play ${classNameAudio}`}>
@@ -84,6 +108,7 @@ export const PlayerMusic = ({ songToPlay }) => {
                 src={IconBtnRight} 
                 alt="" 
                 className='btn-right'
+                onClick={handleNext}
               />
             </div>
           </div>

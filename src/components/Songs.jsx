@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { SongContext } from '../context/SongContext';
 import { getSongsServices } from '../services/artists-service';
 import { Loader } from './Loader';
 import { Song } from './Song'
 
-export const Songs = ({ valueSearch, setSongToPlay, setIdArtist }) => {
+export const Songs = ({ valueSearch }) => {
+  const { setDataSongs } = useContext(SongContext);
   const [loading, setLoading] = useState(false);
   const [songs, setSongs] = useState([]);
 
@@ -11,12 +13,13 @@ export const Songs = ({ valueSearch, setSongToPlay, setIdArtist }) => {
     const getSongs = async () => {
       setLoading(true);
       const data = await getSongsServices(valueSearch);
+      setDataSongs(data);
       setSongs(data);
       setLoading(false);
     }
 
     getSongs();
-  }, [valueSearch, setSongToPlay, setIdArtist])
+  }, [valueSearch])
 
   if (loading) return <Loader description={"Cargando datos de las canciones"}/>
 
@@ -28,9 +31,8 @@ export const Songs = ({ valueSearch, setSongToPlay, setIdArtist }) => {
           songs.map((song) => (
           <Song
             key={song.id}
-            song={song} 
-            setSongToPlay={setSongToPlay}
-            setIdArtist={setIdArtist} />
+            song={song}
+          />
           ))
         }
       </div>
