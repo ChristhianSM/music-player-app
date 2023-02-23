@@ -94,7 +94,6 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  margin-right: 40px;
 }
 
 .volumen {
@@ -113,6 +112,11 @@
     flex-direction: row;
     justify-content: space-between;
     height: 100px;
+  }
+  
+  .container-song-right {
+    gap: 40px;
+    margin-right: 40px;
   }
 
   .container-song-left {
