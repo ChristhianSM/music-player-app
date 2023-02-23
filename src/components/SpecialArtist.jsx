@@ -6,7 +6,7 @@ import { Loader } from './Loader';
 
 export const SpecialArtist = () => {
   
-  const { idArtist } = useContext(SongContext);
+  const { idArtist, songs, setSongSelected } = useContext(SongContext);
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const { link_bi, name, fans, img_medium, img_xl } = data
@@ -18,7 +18,11 @@ export const SpecialArtist = () => {
       setLoading(false);
     }
     getArtist();
-  }, [idArtist])
+  }, [idArtist]);
+
+  const handleBtnPlay = () => {
+    setSongSelected(songs[0]);
+  }
 
   if (loading) return <Loader description={"Cargando informacion del artista"}/>
 
@@ -39,10 +43,13 @@ export const SpecialArtist = () => {
         </a>
       </p>
       <div className='container-buttons'>
-        <button className='btn btn-play'>Reproducir</button>
+        <button
+          className='btn btn-play'
+          onClick={ handleBtnPlay }
+        >Reproducir</button>
         <button className='btn btn-follow'>seguir</button>
         <img 
-          src={IconBtnThree}
+          src={ IconBtnThree }
           alt="More options"
           className='btn-more-options'
         />

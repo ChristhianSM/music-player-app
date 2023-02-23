@@ -1,14 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { NavMenu } from "./components/NavMenu";
 import { PlayerMusic } from "./components/PlayerMusic";
 import { SearchSong } from "./components/SearchSong";
-import { Songs } from "./components/Songs";
-import { SpecialArtist } from "./components/SpecialArtist";
 import { User } from "./components/User";
 import { MatchProvider } from "./context/SongProvider";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SpecialArtist } from "./components/SpecialArtist";
+import { Songs } from "./components/Songs";
+import { MyLibrery } from "./components/MyLibrery";
 
 function App() {
-  const [valueSearch, setValueSearch] = useState("Romeo Santos");
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -21,28 +22,31 @@ function App() {
 
   return (
     <MatchProvider>
-      <div className="main">
-        {screenWidth >= 800 
-          && <div className="container-nav-menu">
-              <NavMenu />
+      <BrowserRouter>
+        <div className="main">
+          {screenWidth >= 800 
+            && <div className="container-nav-menu">
+                <NavMenu />
+              </div>
+          }
+          <div className="container-results">
+            <div className="container-search-user">
+              <SearchSong/>
+              <User />
             </div>
-        }
-        <div className="container-results">
-          <div className="container-search-user">
-            <SearchSong
-              setValueSearch={setValueSearch}
-            />
-            <User />
+            <Routes>
+              <Route path="/" element = {<>
+                                  <SpecialArtist />
+                                  <div className="container-songs">
+                                    <Songs />
+                                  </div>
+                                </>}/>
+              <Route path="/*" element = {<MyLibrery />} />
+            </Routes>
           </div>
-          <SpecialArtist />
-          <div className="container-songs">
-            <Songs 
-              valueSearch={valueSearch}
-            />
-          </div>
+          <PlayerMusic />
         </div>
-        <PlayerMusic />
-      </div>
+      </BrowserRouter>
     </MatchProvider>
   );
 }

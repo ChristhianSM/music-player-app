@@ -4,8 +4,8 @@ import { getSongsServices } from '../services/artists-service';
 import { Loader } from './Loader';
 import { Song } from './Song'
 
-export const Songs = ({ valueSearch }) => {
-  const { setDataSongs } = useContext(SongContext);
+export const Songs = () => {
+  const { setDataSongs, valueSearch } = useContext(SongContext);
   const [loading, setLoading] = useState(false);
   const [songs, setSongs] = useState([]);
 

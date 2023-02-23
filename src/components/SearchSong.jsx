@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import IconSearch from '../assets/icon-search.svg';
+import { SongContext } from '../context/SongContext';
 
-export const SearchSong = ({ setValueSearch }) => {
+export const SearchSong = () => {
+  const { setValueSearch } = useContext(SongContext);
   const [inputValue, setInputValue] = useState('')
 
   const handdleInputChange = (e) => setInputValue(e.target.value);

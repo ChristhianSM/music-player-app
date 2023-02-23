@@ -6,7 +6,7 @@ import { SongContext } from '../context/SongContext';
 export const Song = ({ song }) => {
 
   const { id, title, img, id_artista, artist } = song;
-  const { setSongSelected, setIdArtist } = useContext(SongContext);
+  const { setSongSelected, setIdArtist, saveSongRecent } = useContext(SongContext);
 
   const delemitText = (text = "") => {
     if (text.length > 20) {
@@ -15,6 +15,12 @@ export const Song = ({ song }) => {
     return text;
   };
 
+  const handlePlayMusic = () => {
+    setSongSelected(song);
+    setIdArtist(id_artista);
+    saveSongRecent(song)
+  }
+
   return (
     <div className="card-song" key={id}>
       <div className="card-song-content-img">
@@ -22,10 +28,7 @@ export const Song = ({ song }) => {
         <button
           type="button"
           className="card-song-play"
-          onClick={() => {
-            setSongSelected(song);
-            setIdArtist(id_artista);
-          }}
+          onClick={handlePlayMusic}
         >
           <img src={IconPlay} alt="Play" />
         </button>

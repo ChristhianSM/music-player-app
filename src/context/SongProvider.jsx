@@ -15,6 +15,14 @@ export const MatchProvider = ({ children }) => {
     dispatch(newState);
   }
 
+  const setValueSearch = (value) => {
+    const newState = {
+      type: TYPES.SET_VALUE_SEARCH,
+      payload : value
+    }
+    dispatch(newState);
+  }
+
   const setSongSelected = (song) => {
     const newState = {
       type: TYPES.SET_SONG_SELECTED,
@@ -31,11 +39,24 @@ export const MatchProvider = ({ children }) => {
     dispatch(newState);
   }
 
+  const saveSongRecent = (song) => {
+    const existSong = state.songsRecent.some( item => item.id === song.id);
+    if (!existSong) {
+      const newState = {
+        type: TYPES.SAVE_SONG_RECENT,
+        payload : song
+      }
+      dispatch(newState);
+    }
+  }
+
   const data = {
     ...state,
     setDataSongs,
+    setValueSearch,
     setIdArtist,
     setSongSelected,
+    saveSongRecent,
   };
 
   return <SongContext.Provider value={ data }>

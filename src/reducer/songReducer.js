@@ -3,7 +3,9 @@ import { TYPES } from "../types/types";
 export const initialStateSongs = {
   songs : [],
   songSelected : {},
-  idArtist: 1272674
+  idArtist: 1272674,
+  songsRecent: [],
+  valueSearch: 'Romeo Santos',
 };
 
 export function songReducer(state, action) {
@@ -12,6 +14,11 @@ export function songReducer(state, action) {
       return {
         ...state,
         songs: action.payload
+      };
+    case TYPES.SET_VALUE_SEARCH:
+      return {
+        ...state,
+        valueSearch: action.payload
       };
     case TYPES.SET_SONG_SELECTED:
       return {
@@ -22,6 +29,11 @@ export function songReducer(state, action) {
       return {
         ...state,
         idArtist: action.payload
+      };
+    case TYPES.SAVE_SONG_RECENT:
+      return {
+        ...state,
+        songsRecent: [...state.songsRecent, action.payload],
       };
 
 		default:
