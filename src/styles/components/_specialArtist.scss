@@ -5,12 +5,12 @@
 }
 
 .artist-img {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  display: none;
 }
 
 .artist-img img {
-  width: 250px;
+  width: 150px;
   height: 100%;
   object-fit: cover;
 }
@@ -22,6 +22,7 @@
   position: relative;
   z-index: 90;
   background-color: black;
+  height: 200px;
 }
 
 .artist-info::before {
@@ -38,8 +39,8 @@
   z-index: 100;
   position: relative;
   color: map-get($map: $colors, $key: white);
-  margin-left: 32px;
-  padding-top: 40px;
+  margin-left: 20px;
+  padding-top: 10px;
   font-weight: 700;
   font-size: 22px;
 }
@@ -48,7 +49,7 @@
   z-index: 100;
   position: relative;
   color: map-get($map: $colors, $key: white);
-  margin-left: 32px;
+  margin-left: 20px;
   font-weight: 400;
   font-size: 14px;
   padding: 0;
@@ -68,8 +69,8 @@
   color: map-get($map: $colors, $key: white);
   font-size: 12px;
   letter-spacing: 1px;
-  margin: 10px 21px 0 32px;
-  height: 91px;
+  margin: 10px 21px 0 20px;
+  height: 40px;
 }
 
 .artist-info-link a {
@@ -85,7 +86,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-left: 32px;
+  margin-left: 20px;
+  bottom: 20px;
 }
 
 .btn {
@@ -122,4 +124,50 @@
 
 .btn-more-options {
   cursor: pointer;
+}
+
+@include breakpoint (tablet) {
+  .artist-img {
+    display: block;
+    width: 150px;
+
+    img {
+      width: 150px;
+    }
+  }
+}
+
+@include breakpoint (desktop) {
+  .artist-img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .artist-img img {
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .artist-info {
+    height: auto;
+  }
+
+  .artist-info-name {
+    margin-left: 32px;
+    padding-top: 40px;
+  }
+
+  .artist-info-the-best {
+    margin-left: 32px;
+  }
+
+  .artist-info-link {
+    margin-left: 32px;
+    height: 91px;
+  }
+
+  .container-buttons {
+    margin-left: 32px;
+  }
 }

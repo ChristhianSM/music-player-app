@@ -36,9 +36,9 @@ export const Song = ({ song, setSongToPlay, setIdArtist }) => {
         <h3 className="card-song-title">
           {delemitText(title)}
         </h3>
+        <h3 className="card-song-artist">{artist}</h3>
       </div>
 
-      <h3 className="card-song-artist">{artist}</h3>
     </div>
   );
 }

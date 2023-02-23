@@ -1,9 +1,9 @@
 .container-song-play {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 100px;
   position: fixed;
   z-index: 2000;
   bottom: 0;
@@ -14,6 +14,7 @@
 .container-song-left {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   width: 350px;
 }
@@ -104,4 +105,28 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+
+@include breakpoint (tablet) {
+  .container-song-play{
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+  }
+
+  .container-song-left {
+    gap: 5px;
+    justify-content: unset;
+  }
+}
+
+@include breakpoint (desktop) {
+  .container-song-left {
+    gap: 20px;
+  }
+  .container-song-right {
+    gap: 40px;
+  }
+
+  
 }

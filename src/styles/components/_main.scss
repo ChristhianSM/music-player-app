@@ -1,6 +1,7 @@
 .main {
   display: flex;
   background: #ffffff;
+  justify-content: center;
   max-width: 1300px;
   margin: 0 auto;
   position: relative;
@@ -16,6 +17,12 @@
 }
 
 .container-results {
-  padding: 30px 40px;
-  width: calc(100% - 330px);
+  padding: 20px;
+}
+
+@include breakpoint (desktop) {
+  .container-results {
+    padding: 30px 40px;
+    width: calc(100% - 330px);
+  }
 }

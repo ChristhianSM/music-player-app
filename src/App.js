@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavMenu } from "./components/NavMenu";
 import { PlayerMusic } from "./components/PlayerMusic";
 import { SearchSong } from "./components/SearchSong";
@@ -13,14 +13,28 @@ function App() {
   const [idArtist, setIdArtist] = useState(1);
   const [SongToPlay, setSongToPlay] = useState({});
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="main">
-      <div className="container-nav-menu">
-        <NavMenu />
-      </div>
+      {screenWidth >= 800 
+        && <div className="container-nav-menu">
+            <NavMenu />
+          </div>
+      }
+      
       <div className="container-results">
         <div className="container-search-user">
-          <SearchSong />
+          <SearchSong
+            setValueSearch={setValueSearch}
+          />
           <User />
         </div>
         <SpecialArtist
