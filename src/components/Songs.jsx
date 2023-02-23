@@ -17,11 +17,8 @@ export const Songs = ({ valueSearch, setSongToPlay, setIdArtist }) => {
 
     getSongs();
   }, [valueSearch, setSongToPlay, setIdArtist])
-  
 
-  if (loading) {
-    return <Loader />
-  }
+  if (loading) return <Loader description={"Cargando datos de las canciones"}/>
 
   return (
      <>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import IconBtnThree from '../assets/icon-btn-three.svg';
 import { getArtistaService } from '../services/artists-service'
+import { Loader } from './Loader';
 
 export const SpecialArtist = ({ idArtist = 1 }) => {
   const [data, setData] = useState([])
@@ -16,9 +17,7 @@ export const SpecialArtist = ({ idArtist = 1 }) => {
     getArtist();
   }, [idArtist])
 
-  if (loading) {
-    return <h6>Cargando informacion del artista</h6>
-  }
+  if (loading) return <Loader description={"Cargando informacion del artista"}/>
 
   return (
     <div className='container-artist'>

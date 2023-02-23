@@ -1,6 +1,14 @@
 .container-loader {
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.containter-loader-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
