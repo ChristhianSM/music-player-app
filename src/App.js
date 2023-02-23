@@ -29,7 +29,6 @@ function App() {
             <NavMenu />
           </div>
       }
-      
       <div className="container-results">
         <div className="container-search-user">
           <SearchSong

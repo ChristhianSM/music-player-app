@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getSongsServices } from '../services/artists-service';
+import { Loader } from './Loader';
 import { Song } from './Song'
 
 export const Songs = ({ valueSearch, setSongToPlay, setIdArtist }) => {
@@ -19,7 +20,7 @@ export const Songs = ({ valueSearch, setSongToPlay, setIdArtist }) => {
   
 
   if (loading) {
-    return <h2>Cargando Datos...</h2>
+    return <Loader />
   }
 
   return (
