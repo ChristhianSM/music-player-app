@@ -7,7 +7,7 @@ import { MatchProvider } from "./context/SongProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpecialArtist } from "./components/SpecialArtist";
 import { Songs } from "./components/Songs";
-import { MyLibrery } from "./components/MyLibrery";
+import { MyLibrery } from "./components/MyLibrary";
 
 function App() {
 

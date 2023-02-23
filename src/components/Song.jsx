@@ -6,7 +6,7 @@ import { SongContext } from '../context/SongContext';
 export const Song = ({ song }) => {
 
   const { id, title, img, id_artista, artist } = song;
-  const { setSongSelected, setIdArtist, saveSongRecent } = useContext(SongContext);
+  const { setSongSelected, setIdArtist, saveSongRecent, saveIdArtistRecent } = useContext(SongContext);
 
   const delemitText = (text = "") => {
     if (text.length > 20) {
@@ -18,7 +18,8 @@ export const Song = ({ song }) => {
   const handlePlayMusic = () => {
     setSongSelected(song);
     setIdArtist(id_artista);
-    saveSongRecent(song)
+    saveSongRecent(song);
+    saveIdArtistRecent(id_artista);
   }
 
   return (

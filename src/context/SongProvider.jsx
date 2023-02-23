@@ -50,6 +50,17 @@ export const MatchProvider = ({ children }) => {
     }
   }
 
+  const saveIdArtistRecent = (id) => {
+    const existIdArtist = state.songsRecent.some( item => item.id_artista === id);
+    if (!existIdArtist) {
+      const newState = {
+        type: TYPES.SET_ID_ARTIST_RECENT,
+        payload : id
+      }
+      dispatch(newState);
+    }
+  }
+
   const data = {
     ...state,
     setDataSongs,
@@ -57,6 +68,7 @@ export const MatchProvider = ({ children }) => {
     setIdArtist,
     setSongSelected,
     saveSongRecent,
+    saveIdArtistRecent,
   };
 
   return <SongContext.Provider value={ data }>

@@ -6,6 +6,7 @@ export const initialStateSongs = {
   idArtist: 1272674,
   songsRecent: [],
   valueSearch: 'Romeo Santos',
+  idsArtistsRecent : [],
 };
 
 export function songReducer(state, action) {
@@ -34,6 +35,11 @@ export function songReducer(state, action) {
       return {
         ...state,
         songsRecent: [...state.songsRecent, action.payload],
+      };
+    case TYPES.SET_ID_ARTIST_RECENT:
+      return {
+        ...state,
+        idsArtistsRecent: [...state.idsArtistsRecent, action.payload],
       };
 
 		default:
